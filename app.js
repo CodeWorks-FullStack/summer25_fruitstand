@@ -122,6 +122,7 @@ function buyBanana() {
 
 
 // Abstraction - useful when repeating yourself across functions
+// fruitPosition is and example of a function "Parameter"
 function buyFruit(fruitPosition) {
   let fruit = fruitForSale[fruitPosition]
   console.log('buying', fruitPosition, fruit);
