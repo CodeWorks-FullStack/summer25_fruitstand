@@ -151,3 +151,13 @@ function calculateTotal() {
   console.log(totalElm);
   totalElm.textContent = grandTotal.toFixed(2)
 }
+
+// NOTE breakdown of the for loop
+// ..⬇️start......⬇️continue while true
+for (let x = 0; x < 10; x += 1) {
+  //.............................⬆️ Run after each "loop"
+  // the for loop will repeat the code between the { }, adding + 1 after each "loop", Once x is no longer < 10, the loop will finish
+  console.log('loop', x)
+  // this loop just console logs 0-9
+  // after the all the code in the block runs, it runs our x += 1, checks the "condition", then runs again if condition is still true
+}
