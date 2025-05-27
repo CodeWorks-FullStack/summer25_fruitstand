@@ -11,7 +11,7 @@
   <title>Fruit Stand 🍌</title>
 </head>
 
-<body>
+<body data-bs-theme="dark">
 
   <header class="bg-dark text-light fs-2">
     Fruit Stand 🍌
@@ -19,7 +19,41 @@
 
   <main class="container-fluid">
     <section class="row">
-      <!-- THE FRUIT WILL GO HERE -->
+
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-title fs-1 text-center">🍎</div>
+          <div class="card-body d-flex flex-row justify-content-between">
+            <span>$0.50</span>
+            <button class="btn btn-primary" onclick="buyFruit(0)">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-title fs-1 text-center">🍌</div>
+          <div class="card-body d-flex flex-row justify-content-between">
+            <span>$0.75</span>
+            <button class="btn btn-primary" onclick="buyFruit(1)">Buy</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-title fs-1 text-center">🍈</div>
+          <div class="card-body d-flex flex-row justify-content-between">
+            <span>$2.33</span>
+            <button onclick="buyFruit(2)" class="btn btn-primary">Buy</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="row justify-content-center mt-2">
+      <div class="col-4 bg-dark p-2 rounded text-success-emphasis fs-2">
+        <span><i class="mdi mdi-cash-100"></i><span id="total">0.00</span></span>
+      </div>
+
     </section>
 
   </main>

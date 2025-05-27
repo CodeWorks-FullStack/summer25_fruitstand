@@ -9,7 +9,7 @@ let myName = 'mick'
 let lastName = 'WorldWide'
 
 myName = 'Mr.' + myName
-console.log(myName, lastName)
+// console.log(myName, lastName)
 
 let score = 100
 
@@ -19,7 +19,7 @@ score += 500
 
 score + 10000000000 // there is no = sign in this 'expression', so score is never REASSIGNED
 
-console.log('My Score', score)
+// console.log('My Score', score)
 
 
 let mickIsCool = true
@@ -45,7 +45,7 @@ let nums = [-5, 28, 999999999999999999999999]
 
 let array = [1, 2, -10, null, evilTwin, ['howdy', 'partner']]
 
-console.log(array[5][1])
+// console.log(array[5][1])
 
 let battleship = [
   ['🌊', '🌊', '🌊'],
@@ -53,10 +53,9 @@ let battleship = [
   ['🌊', '🌊', '🌊'],
 ]
 
-console.log('💥', battleship[1][2])
+// console.log('💥', battleship[1][2])
 
 // Object
-
 // Objects store data unordered, in a KEY : VALUE pair, and the VALUE is accessed by KEY
 
 let object = { num1: -100, num2: 200000 }
@@ -79,3 +78,76 @@ let instructor = {
 let dumbNumber = 10
 
 let smartObj = { name: 'Wyatt', emoji: '🤠' }
+
+
+// ------------------END OF EXAMPLE------------------------------
+
+
+let fruitForSale = [
+  {
+    name: 'Apple',
+    price: .50,
+    qty: 0
+  },
+  {
+    name: 'Banana',
+    price: .75,
+    qty: 0
+  },
+  {
+    name: 'Melon',
+    price: 2.33,
+    qty: 0
+  },
+]
+
+
+function buyApple() {
+  // console.log('buying 🍎')
+  let apple = fruitForSale[0]
+  apple.qty += 1
+  // console.log(apple)
+  // Aliases for Primitive types don't modify the original
+  // let appleQTY = fruitForSale[0].qty
+  // appleQTY += 1
+  // console.log(appleQTY);
+}
+
+function buyBanana() {
+  // console.log('🍌');
+  let banana = fruitForSale[1]
+  banana.qty += 1
+  // console.log(banana);
+}
+
+
+// Abstraction - useful when repeating yourself across functions
+function buyFruit(fruitPosition) {
+  let fruit = fruitForSale[fruitPosition]
+  console.log('buying', fruitPosition, fruit);
+  fruit.qty += 1
+  console.log('bought', fruit);
+
+  calculateTotal()
+}
+
+
+// Iteration (loops) - useful for repeating yourself inside of a function
+function calculateTotal() {
+  // let apple = fruitForSale[0]
+  // console.log('apple total', apple.price * apple.qty)
+
+  let grandTotal = 0
+
+  for (let loop = 0; loop <= 2; loop += 1) {
+    let fruit = fruitForSale[loop]
+    // console.log('loop', loop, fruit)
+    console.log(fruit.name, fruit.price * fruit.qty)
+    grandTotal += fruit.price * fruit.qty
+  }
+
+  console.log('end', grandTotal)
+  let totalElm = document.getElementById('total')
+  console.log(totalElm);
+  totalElm.textContent = grandTotal.toFixed(2)
+}
